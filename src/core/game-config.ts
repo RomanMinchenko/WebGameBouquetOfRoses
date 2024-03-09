@@ -6,11 +6,10 @@ const BASE_HEIGHT: number = 1080;
 const GAME_CONFIG: any = {
   baseWidth: BASE_WIDTH,
   baseHeight: BASE_HEIGHT,
-  width: BASE_WIDTH,
-  height: BASE_HEIGHT,
+  width: BASE_WIDTH > window.innerWidth ? window.innerWidth : BASE_WIDTH,
+  height: BASE_HEIGHT > window.innerHeight ? window.innerHeight : BASE_HEIGHT,
   type: Phaser.AUTO,
   transparent: true,
-  parent: "game-container",
   render: {
     batchSize: 512,
     powerPreference: 'high-performance',
